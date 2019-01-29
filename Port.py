@@ -25,8 +25,8 @@ p = 5
 q = 10
 
 #予測期間
-start = 20180104
-end = 20181210
+start = 20160104
+end = 20161230
 
 
 similar = ['1801 JT Equity','1802 JT Equity','1803 JT Equity','1812 JT Equity','1820 JT Equity','1821 JT Equity','1824 JT Equity','1833 JT Equity','1860 JT Equity','1893 JT Equity']
@@ -157,11 +157,12 @@ def makegraph(estimation,sd,real,tergetname):
 
 PortRet = []
 for i in range(po_start,po_end+1):
-    tmpdf = df[i-10:i+1]
+    tmpdf = df[i-11:i]
+    tmpdf2 = df[i:i+1]
     result,result_sd = onetimeallestimation(tmpdf,similar,n,m,q)
     long = similar[np.argmax(result)]
     short = similar[np.argmin(result)]
-    portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
+    portreturn = tmpdf2[long].values[-1] - tmpdf2[short].values[-1]
     PortRet.append(portreturn)
 PortRet = pd.DataFrame(PortRet)
 PortRet.index = index
