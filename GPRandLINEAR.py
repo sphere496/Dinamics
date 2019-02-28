@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jan 28 10:52:54 2019
+Created on Thu Feb 28 10:04:54 2019
 
 @author: maeta
 """
@@ -15,22 +15,12 @@ from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn import linear_model
 clf = linear_model.LinearRegression()
 
-# 得られている情報の数
-initial = 50
-# 1回の予測に使うペアの個数
-n = 10
-# 1回の予測に使う株データの個数
-m = 5
-# 予測の回数
-p = 5
-# 1回の予測に使うデータの深さ
-q = 10
-
 #予測期間
 start = 20160104
 end = 20161230
 
 similar = ['1801 JT Equity','1802 JT Equity','1803 JT Equity','1812 JT Equity','1820 JT Equity','1821 JT Equity','1824 JT Equity','1833 JT Equity','1860 JT Equity','1893 JT Equity']
+
 # 推定のために1日リターンに
 df_open = pd.read_csv('Open.csv',usecols =similar)
 df_close = pd.read_csv('Close.csv',usecols =similar)
@@ -152,6 +142,7 @@ class Linearestimation:
         return result
 
 
+# GPRcheck
 # PortRet = []
 # GPR = GPRestimation(df,similar,10,3,5)
 # for i in range(po_start,po_end+1):
@@ -168,17 +159,17 @@ class Linearestimation:
 # PortRet.to_csv('Result-GPR-test.csv')
 
 # linearcheck
-PortRet = []
-Line = Linearestimation(df,similar,10)
-for i in range(po_start,po_end+1):
-    tmpdf = df[i-11:i]
-    result = Line.linearonetimeallestimation(i)
-    long = similar[np.argmax(result)]
-    short = similar[np.argmin(result)]
-    portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
-    PortRet.append(portreturn)
-    print(str(i)+"...finished")
-PortRet = pd.DataFrame(PortRet)
-PortRet.index = index
-PortRet.columns = ['Ret']
-PortRet.to_csv('Result-Linear.csv')
+# PortRet = []
+# Line = Linearestimation(df,similar,10)
+# for i in range(po_start,po_end+1):
+#     tmpdf = df[i-11:i]
+#     result = Line.linearonetimeallestimation(i)
+#     long = similar[np.argmax(result)]
+#     short = similar[np.argmin(result)]
+#     portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
+#     PortRet.append(portreturn)
+#     print(str(i)+"...finished")
+# PortRet = pd.DataFrame(PortRet)
+# PortRet.index = index
+# PortRet.columns = ['Ret']
+# PortRet.to_csv('Result-Linear.csv')
