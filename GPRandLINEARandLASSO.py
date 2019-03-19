@@ -15,10 +15,19 @@ from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn import linear_model
 
 #予測期間
-start = 20160104
+start = 20160107
 end = 20161230
 
-similar = ['1801 JT Equity','1802 JT Equity','1803 JT Equity','1812 JT Equity','1820 JT Equity','1821 JT Equity','1824 JT Equity','1833 JT Equity','1860 JT Equity','1893 JT Equity']
+similar = ['1801 JT Equity',
+'1802 JT Equity',
+'1803 JT Equity',
+'1812 JT Equity',
+'1820 JT Equity',
+'1821 JT Equity',
+'1824 JT Equity',
+'1833 JT Equity',
+'1860 JT Equity',
+'1893 JT Equity']
 
 # 推定のために1日リターンに
 df_open = pd.read_csv('Open.csv',usecols =similar)
@@ -37,6 +46,7 @@ class GPRestimation:
         self.df = df
         self.similar = similar
         self.n = n
+        
         self.p = p
         self.q = q
 
@@ -96,12 +106,15 @@ class GPRestimation:
         result_sd = np.array([])
         j = 0
         while j < self.q:
-            x = self.df[self.pickup2(self.similar, terget, self.p)].values
-            x_train,x_test = x[i-self.n:i],[x[i]]
-            pred_y ,pred_y_sd = self.GPR_fit(x_train,y_train,x_test)
-            result = np.append(result,pred_y)
-            result_sd = np.append(result_sd,pred_y_sd)
-            j += 1
+            try:
+                x = self.df[self.pickup2(self.similar, terget, self.p)].values
+                x_train,x_test = x[i-self.n:i],[x[i]]
+                pred_y ,pred_y_sd = self.GPR_fit(x_train,y_train,x_test)
+                result = np.append(result,pred_y)
+                result_sd = np.append(result_sd,pred_y_sd)
+                j += 1
+            except:
+                j += 1
         mean = self.kde_process(result)
         err = (self.df[terget].values[i+1]-mean)**2
         sd = np.average(result_sd)
@@ -180,24 +193,24 @@ class Lassoestimation:
         return result,err
 
 # GPRcheck
-# PortRet = []
-# GPR = GPRestimation(df,similar,10,3,5)
-# err = 0
-# for i in range(po_start,po_end+1):
-#     tmpdf = df[i:i+1]
-#     result = GPR.onetimeallestimation(i)[0]
-#     result_sd = GPR.onetimeallestimation(i)[1]
-#     err += GPR.onetimeallestimation(i)[2]
-#     long = similar[np.argmax(result)]
-#     short = similar[np.argmin(result)]
-#     portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
-#     PortRet.append(portreturn)
-#     print(str(i)+"...finished")
-#     print(err)
-# PortRet = pd.DataFrame(PortRet)
-# PortRet.index = index
-# PortRet.columns = ['Ret-GPR']  
-# PortRet.to_csv('Result.csv')
+PortRet = []
+GPR = GPRestimation(df,similar,10,3,5)
+err = 0
+for i in range(po_start,po_end+1):
+    tmpdf = df[i:i+1]
+    result = GPR.onetimeallestimation(i)[0]
+    result_sd = GPR.onetimeallestimation(i)[1]
+    err += GPR.onetimeallestimation(i)[2]
+    long = similar[np.argmax(result)]
+    short = similar[np.argmin(result)]
+    portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
+    PortRet.append(portreturn)
+    print(str(i)+"...finished")
+    print(err)
+PortRet = pd.DataFrame(PortRet)
+PortRet.index = index
+PortRet.columns = ['Ret-GPR']  
+PortRet.to_csv('Result.csv')
 
 # linearcheck
 PortRet = []
@@ -217,24 +230,24 @@ print(err)
 PortRet = pd.DataFrame(PortRet)
 PortRet.index = index
 PortRet.columns = ['Ret-Linear']
-PortRet.to_csv('Result.csv')
+PortRet.to_csv('Result-Linear.csv')
 
 # Lassocheck
-# PortRet = []
-# Lasso = Lassoestimation(df,similar,10)
-# err = 0
-# for i in range(po_start,po_end+1):
-#     tmpdf = df[i-11:i]
-#     result = Lasso.lassoonetimeallestimation(i)[0]
-#     err += Lasso.lassoonetimeallestimation(i)[1]
-#     long = similar[np.argmax(result)]
-#     short = similar[np.argmin(result)]
-#     portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
-#     PortRet.append(portreturn)
-#     print(str(i)+"...finished")
-#     print(err)
-# PortRet = pd.DataFrame(PortRet)
-# PortRet.index = index
-# PortRet.columns = ['Ret-Lasso']
-# PortRet.to_csv('Result.csv')
+PortRet = []
+Lasso = Lassoestimation(df,similar,10)
+err = 0
+for i in range(po_start,po_end+1):
+    tmpdf = df[i-11:i]
+    result = Lasso.lassoonetimeallestimation(i)[0]
+    err += Lasso.lassoonetimeallestimation(i)[1]
+    long = similar[np.argmax(result)]
+    short = similar[np.argmin(result)]
+    portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
+    PortRet.append(portreturn)
+    print(str(i)+"...finished")
+    print(err)
+PortRet = pd.DataFrame(PortRet)
+PortRet.index = index
+PortRet.columns = ['Ret-Lasso']
+PortRet.to_csv('Result-Lasso.csv')
 
