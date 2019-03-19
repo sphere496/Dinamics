@@ -67,11 +67,31 @@ where $c_1=\ds\int x^2K(x)dx,\ c_2=\int K(x)^2dx,\ c_3=\int(f''(x))^2dx$.
 
 Bishopを参照\cite{bishop}しながら，ガウス過程回帰について復習する．
 
+\begin{defi}[カーネル関数(正定値カーネル)]
+ $\Omega$を集合とし，$k:\Omega\times\Omega\to\R$を写像とする．$k$が$\Omega$の正定値カーネルであるとは，次の2つを満たすことを言う．
+ \begin{enumerate}
+  \item $k$は対称．すなわち，$k(x,y)=k(y,x)$である．
+  \item $k$の$n$次元グラム行列$(k(x_i,x_j))_{i,j}$が半正定値である．
+ \end{enumerate}
+\end{defi}
+
+% \begin{defi}[再生核ヒルベルト空間]
+%  ヒルベルト空間$H\subset C(\Omega)$が再生核ヒルベルト空間であるとは，任意の$x\in\Omega$に対し，$\phi_x\in H$が存在して，任意の$f\in H$に対し，
+%  \[
+%   \langle f,\phi_x \rangle = f(x)
+%  \]
+%  が成り立つことを言う．このとき，$\phi_x$を$x$の再生核という．
+% \end{defi}
+
+% \begin{thm}[正定値カーネルとRKHSの対応]
+%  正定値カーネルとRKHSの空間は1:1に対応する．
+% \end{thm}
 
 \begin{itemize}
  \item 推定の仮定\\
-       $y=\vw^T\phi(\vx)$とし，パラメータ$\vw$がガウス分布に従うと仮定する．\\
+       関数$\phi:\R^n\to\R^n$に対し，$y=\vw^T\phi(\vx)$とし，パラメータ$\vw$がガウス分布に従うと仮定する．\\
        すなわち，任意の$\vx_1,\cdots,\vx_n$に対し，$\vy=\Phi\vw$はガウス分布に従う．このことから，$\vy$は無限次元のガウス分布に従う，などとも言われる．ただし，$\Phi=(\phi(\vx_i))_{i=1,\cdots,n}$は計画行列である．
+       $k:\R^n\times\R^n\to\R:(x,x')\mapsto k(x,x')=\phi(x)^T\phi(x')$はカーネル関数である．
        % このとき，$y$の同時分布は，平均$0$共分散にグラム行列$K$があるガウス分布である．
        % \[
        % 	p(\vy)=N(\vy|0,K)
@@ -111,46 +131,37 @@ Bishopを参照\cite{bishop}しながら，ガウス過程回帰について復�
 
 \section{コード}
 
-以上を踏まえ，以下のようにコードを組んだ(参考\cite{GPY})
+以上を踏まえ，以下のようにコードを組んだ(参考\cite{GPY})．
+比較のため，線形回帰よびLASSO回帰による計算も行う．
 
-\lstinputlisting[caption=main.py,label=ほげ]{main.py}
+\lstinputlisting[caption=GPRandLinearandLasso.py]{GPRandLinearandLasso.py}
 
 \section{結果}
 
 以下の同業種の株で推定を行った．\\
 
-推定グループ(similar)：業種グループ:Engineering\quad 業種サブグループ:Building\&Construc-Misc
+group1 : 業種グループ:Engineering\quad 業種サブグループ:Building\&Construc-Misc
+
+group2 : 業種グループ:BasicMaterials\quad 業種サブグループ:Chemicals
+
+group3 : 業種グループ:Consumer,Noncyclical\quad 業種サブグループ:food
+
+group4 : 業種グループ:Machinery diversified\quad 業種サブグループ:Machinery-generalindust
 
 
-\begin{center} 
-'1801 JT Equity','1802 JT Equity','1803 JT Equity','1812 JT Equity','1820 JT Equity',\\
- '1821 JT Equity','1824 JT Equity','1833 JT Equity','1860 JT Equity','1893 JT Equity'
+
+\begin{table}[htb]
+\begin{center}
+  \begin{tabular}{lccc}
+     & Linear & Lasso & GPR \\\hline
+    group1 & 0.75427 & 0.75644 & 0.6943 \\
+    group2 & 3.2203 & 2.6910 & 2.0573 \\
+    group3  & 1.7092 & 0.5125 & 0.3745 \\
+    group4 & 0.6737 & 0.5925 & 0.51308 \\
+  \end{tabular}
+ \caption{二乗誤差の比較}
 \end{center}
-
-推定した株(terget)：'1812 JT Equity'
-
-推定に費やした回数(n)：10回
-
-推定に使った株の数(m)：3ずつ
-
-1回のカーネル密度推定は以下のようになる．
-
-\begin{figure}[htb]
- \begin{center}
- \includegraphics[width = 10cm]{test_10_3.png}
- \caption{カーネル密度推定}
- \end{center}
-\end{figure} 
-
-以下は，10回すべての株を推定し，将来予測を行なった結果である．　
-
-\begin{figure}[htb]
- \begin{center}
- \includegraphics[width = 10cm]{test.png}
- \caption{10回予測}
- \end{center}
-\end{figure} 
-
+\end{table} 
 
 \begin{thebibliography}{9}
  \bibitem{GPY}{Qiita PRML第6章 ガウス過程による回帰Python実装 \url{https://qiita.com/ctgk/items/4c4607edf15072cddc46}}
