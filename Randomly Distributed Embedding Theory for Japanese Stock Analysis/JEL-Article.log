@@ -1,0 +1,345 @@
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.10.1)  1 APR 2019 18:28
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**JEL-Article.tex
+(./JEL-Article.tex
+pLaTeX2e <2017/09/26> (based on LaTeX2e <2017-04-15>)
+Babel <3.13> and hyphenation patterns for 84 language(s) loaded.
+(./AEA.cls
+Document Class: AEA 2011/07/24 American Economic Association Article Classes
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
+\c@tracingmulticols=\count82
+\mult@box=\box42
+\multicol@leftmargin=\dimen118
+\c@unbalance=\count83
+\c@collectmore=\count84
+\doublecol@number=\count85
+\multicoltolerance=\count86
+\multicolpretolerance=\count87
+\full@width=\dimen119
+\page@free=\dimen120
+\premulticols=\dimen121
+\postmulticols=\dimen122
+\multicolsep=\skip41
+\multicolbaselineskip=\skip42
+\partial@page=\box43
+\last@line=\box44
+\maxbalancingoverflow=\dimen123
+\mult@rightbox=\box45
+\mult@grightbox=\box46
+\mult@gfirstbox=\box47
+\mult@firstbox=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\c@columnbadness=\count88
+\c@finalcolumnbadness=\count89
+\last@try=\dimen124
+\multicolovershoot=\dimen125
+\multicolundershoot=\dimen126
+\mult@nat@firstbox=\box66
+\colbreak@box=\box67
+\mc@col@check@num=\count90
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen127
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen128
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box68
+\strutbox@=\box69
+\big@size=\dimen129
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks16
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks17
+\eqnshift@=\dimen130
+\alignsep@=\dimen131
+\tagshift@=\dimen132
+\tagwidth@=\dimen133
+\totwidth@=\dimen134
+\lineht@=\dimen135
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+Journal Selected: JOURNAL OF ECONOMIC LITERATURE
+Mode Selected: final
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
+(Font)              size <10.95> substituted on input line 333.
+
+\abstractIndent=\skip46
+\abstractWidth=\skip47
+\c@part=\count103
+\c@section=\count104
+\c@subsection=\count105
+\c@subsubsection=\count106
+\c@paragraph=\count107
+\c@subparagraph=\count108
+\c@figure=\count109
+\c@table=\count110
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen136
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/platex/pxchfon/pxchfon.sty
+Package: pxchfon 2017/09/09 v1.1a
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvips.def on input line 99.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/dvips.def
+File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
+))
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/type1cm/type1cm.sty
+Package: type1cm 2002/09/05 v0.04 BlueSky/Y&Y Type1 CM font definitions (DPC, p
+atched RF)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/platex/style file/basicnewcommand.sty)
+(./JEL-Article.aux)
+\openout1 = `JEL-Article.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <24> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 52.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <24> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 52.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 52.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 52.
+
+
+LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 52.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 52.
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
+
+LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 52.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 52.
+
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 52.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
+
+Underfull \vbox (badness 2460) has occurred while \output is active []
+
+ [1
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+\JY1/mc/m/it/10.5 および ， $\OML/cmm/m/it/10.5 " \OMS/cmsy/m/n/10.5 ^^X \OML/c
+mm/m/it/10.5 N\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.5 I[]\OT1/cmr/m/n/10.95 )$
+ \JY1/mc/m/it/10.5 が成り
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+\JY1/mc/m/it/10.5 立 っ ているとする ． このとき ， テスト
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+\JY1/mc/m/it/10.5 デ ータ $\OT1/cmr/m/n/10.95 (\OML/cmm/b/it/10.5 x[]\OML/cmm/m
+/it/10.5 ; t[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.5 ; \OT1/cmr/m/n/10.95 (\OML
+/cmm/b/it/10.5 x[]\OML/cmm/m/it/10.5 ; t[]\OT1/cmr/m/n/10.95 ) []  \OML/cmm/m/i
+t/10.5 ; \OT1/cmr/m/n/10.95 (\OML/cmm/b/it/10.5 x[]\OML/cmm/m/it/10.5 ; t[]\OT1
+/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.5 2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+\U/msb/m/n/10.5 R[] \OMS/cmsy/m/n/10.5 ^^B \U/msb/m/n/10.5 R$ \JY1/mc/m/it/10.5
+ と新しい入力 $\OML/cmm/b/it/10.5 x[]$ \JY1/mc/m/it/10.5 か
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+\JY1/mc/m/it/10.5 ら ， えられる出力 $\OML/cmm/m/it/10.5 t[]$ \JY1/mc/m/it/10.5
+ の分布
+ []
+
+
+Overfull \hbox (9.8644pt too wide) in paragraph at lines 70--72
+\OML/cmm/m/it/10.5 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.5 t[]\OMS/cmsy/m/n/10.
+5 j\OML/cmm/b/it/10.5 x[]\OML/cmm/m/it/10.5 ; \OML/cmm/b/it/10.5 x[]\OML/cmm/m/
+it/10.5 ; \OML/cmm/b/it/10.5 x[]\OML/cmm/m/it/10.5 ; []  ; \OML/cmm/b/it/10.5 x
+[]\OML/cmm/m/it/10.5 ; t[]; t[]; []  ; t[]\OT1/cmr/m/n/10.95 ) =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+\OML/cmm/m/it/10.5 N\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.5 t[]\OMS/cmsy/m/n/10.
+5 j\OML/cmm/m/it/10.5 m; ^^[[]\OT1/cmr/m/n/10.95 )$ \JY1/mc/m/it/10.5 を推定す
+る ． カ ー
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 70--72
+\JY1/mc/m/it/10.5 ネル関数 $\OML/cmm/m/it/10.5 k \OT1/cmr/m/n/10.95 : \U/msb/m/
+n/10.5 R[] \OMS/cmsy/m/n/10.5 ^^B \U/msb/m/n/10.5 R[] \OMS/cmsy/m/n/10.5 ! \U/m
+sb/m/n/10.5 R$ \JY1/mc/m/it/10.5 を ，
+ []
+
+
+Overfull \hbox (15.54454pt too wide) detected at line 90
+[] \OMS/cmsy/m/n/10.5 j\OML/cmm/m/it/10.5 x[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/
+10.5 t[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.5 ^^@ \OML/cmm/m/it/10.5  []\OT1/
+cmr/m/n/10.95 (\OML/cmm/m/it/10.5 x[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.5 t[]
+\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.5 ; x[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/1
+0.5 t[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.5 ; []  ; x[]\OT1/cmr/m/n/10.95 (\O
+ML/cmm/m/it/10.5 t[]\OT1/cmr/m/n/10.95 ))\OMS/cmsy/m/n/10.5 j
+ []
+
+[2]
+Underfull \hbox (badness 1983) in paragraph at lines 135--136
+[]\OT1/cmr/m/n/10.95 Kazuyuki Ai-hara et al. ''Ran-
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 136--137
+\OT1/cmr/m/n/10.95 Recog-ni-tion and Ma-chine Learn-ing''
+ []
+
+Missing character: There is no ^^e2 in font cmr10!
+Missing character: There is no ^^80 in font cmr10!
+Missing character: There is no ^^93 in font cmr10!
+[3] (./JEL-Article.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.45pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2593 strings out of 493648
+ 33655 string characters out of 6148806
+ 110133 words of memory out of 5000000
+ 6168 multiletter control sequences out of 15000+600000
+ 30540 words of font info for 117 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 34i,9n,26p,843b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on JEL-Article.dvi (3 pages, 23120 bytes).
