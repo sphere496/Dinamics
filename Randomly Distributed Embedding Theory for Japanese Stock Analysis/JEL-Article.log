@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.10.1)  1 APR 2019 18:28
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.10.1)  1 APR 2019 18:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -240,31 +240,32 @@ LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
 LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 52.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
-
-Underfull \vbox (badness 2460) has occurred while \output is active []
-
- [1
+[1
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
-\JY1/mc/m/it/10.5 および ， $\OML/cmm/m/it/10.5 " \OMS/cmsy/m/n/10.5 ^^X \OML/c
-mm/m/it/10.5 N\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.5 I[]\OT1/cmr/m/n/10.95 )$
- \JY1/mc/m/it/10.5 が成り
+Underfull \hbox (badness 1424) in paragraph at lines 70--72
+\JY1/mc/m/it/10.5 に対し ， 基底関数 $\OML/cmm/m/it/10.5 ^^^ \OT1/cmr/m/n/10.95
+ : \U/msb/m/n/10.5 R[] \OMS/cmsy/m/n/10.5 ! \U/msb/m/n/10.5 R[]$ \JY1/mc/m/it/1
+0.5 を
+ []
+
+
+Underfull \hbox (badness 3240) in paragraph at lines 70--72
+\JY1/mc/m/it/10.5 用いて ， $\OML/cmm/m/it/10.5 t \OT1/cmr/m/n/10.95 = \OML/cmm
+/b/it/10.5 w[]\OML/cmm/m/it/10.5 ^^^\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.5 x\OT
+1/cmr/m/n/10.95 ) + \OML/cmm/m/it/10.5 "$ \JY1/mc/m/it/10.5 という関
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 70--72
-\JY1/mc/m/it/10.5 立 っ ているとする ． このとき ， テスト
+\JY1/mc/m/it/10.5 係が成り立 っ ていると仮定する ． た
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
-\JY1/mc/m/it/10.5 デ ータ $\OT1/cmr/m/n/10.95 (\OML/cmm/b/it/10.5 x[]\OML/cmm/m
-/it/10.5 ; t[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.5 ; \OT1/cmr/m/n/10.95 (\OML
-/cmm/b/it/10.5 x[]\OML/cmm/m/it/10.5 ; t[]\OT1/cmr/m/n/10.95 ) []  \OML/cmm/m/i
-t/10.5 ; \OT1/cmr/m/n/10.95 (\OML/cmm/b/it/10.5 x[]\OML/cmm/m/it/10.5 ; t[]\OT1
-/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.5 2
+Underfull \hbox (badness 2334) in paragraph at lines 70--72
+\JY1/mc/m/it/10.5 だし ， 重み付け $\OML/cmm/b/it/10.5 w$ \JY1/mc/m/it/10.5 と
+誤差 $\OML/cmm/m/it/10.5 "$ \JY1/mc/m/it/10.5 について ，
  []
 
 
@@ -342,4 +343,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  34i,9n,26p,843b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on JEL-Article.dvi (3 pages, 23120 bytes).
+Output written on JEL-Article.dvi (3 pages, 23180 bytes).
