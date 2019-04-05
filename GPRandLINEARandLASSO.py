@@ -91,13 +91,24 @@ class GPRestimation:
     # kernel density estimationをしたのち，期待値を算出する
     def kde_process(self,data_list):
         kde_model = gaussian_kde(data_list)
+        print(data_list)
         y = kde_model(data_list)
         skew = pd.Series(y).skew()
-        if abs(skew) < 0.1:
-            return self.expectation(data_list,y)
+        average = self.expectation(data_list,y)
+        print(skew)
+        if abs(skew) < 0.5:
+            print("0.5")
+            return average
         else:
-            data_list2=self.pointsort(data_list,np.average(data_list))[0:int(len(data_list)/3)]
-            return self.expectation(data_list2,kde_model(data_list2))
+            print("not 0.5")
+            sortedlist = self.pointsort(data_list,average)[0:int(len(data_list)/2)]
+            # print('sortedlist', sortedlist)
+            delta = [x-average for x in sortedlist]
+            # print('delta', delta)
+            omega = [np.e**(-x/delta[0]) for x in delta]
+            # print('omega',omega)
+            # print(self.expectation(sortedlist,omega))
+            return self.expectation(sortedlist,omega)
 
     def onetimeestimation(self,i,terget):
         # tergetの情報（1つだけずらして取得)
@@ -130,7 +141,7 @@ class GPRestimation:
             result_sd.append(self.onetimeestimation(i,terget)[1])
             err += self.onetimeestimation(i,terget)[2]
         return result,result_sd,err
-
+    
 ## 線形回帰による方法
 class Linearestimation:
     def __init__(self, df, similar, n):
@@ -194,7 +205,7 @@ class Lassoestimation:
 
 # GPRcheck
 PortRet = []
-GPR = GPRestimation(df,similar,10,3,5)
+GPR = GPRestimation(df,similar,10,3,16)
 err = 0
 for i in range(po_start,po_end+1):
     tmpdf = df[i:i+1]
@@ -212,42 +223,42 @@ PortRet.index = index
 PortRet.columns = ['Ret-GPR']  
 PortRet.to_csv('Result.csv')
 
-# linearcheck
-PortRet = []
-Line = Linearestimation(df,similar,10)
-err = 0
-for i in range(po_start,po_end+1):
-    tmpdf = df[i-11:i]
-    result = Line.linearonetimeallestimation(i)[0]
-    err += Line.linearonetimeallestimation(i)[1]
-    long = similar[np.argmax(result)]
-    short = similar[np.argmin(result)]
-    portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
-    PortRet.append(portreturn)
-    print(str(i)+"...finished")
-    print(err)
-print(err)
-PortRet = pd.DataFrame(PortRet)
-PortRet.index = index
-PortRet.columns = ['Ret-Linear']
-PortRet.to_csv('Result-Linear.csv')
+# # linearcheck
+# PortRet = []
+# Line = Linearestimation(df,similar,10)
+# err = 0
+# for i in range(po_start,po_end+1):
+#     tmpdf = df[i-11:i]
+#     result = Line.linearonetimeallestimation(i)[0]
+#     err += Line.linearonetimeallestimation(i)[1]
+#     long = similar[np.argmax(result)]
+#     short = similar[np.argmin(result)]
+#     portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
+#     PortRet.append(portreturn)
+#     print(str(i)+"...finished")
+#     print(err)
+# print(err)
+# PortRet = pd.DataFrame(PortRet)
+# PortRet.index = index
+# PortRet.columns = ['Ret-Linear']
+# PortRet.to_csv('Result-Linear.csv')
 
-# Lassocheck
-PortRet = []
-Lasso = Lassoestimation(df,similar,10)
-err = 0
-for i in range(po_start,po_end+1):
-    tmpdf = df[i-11:i]
-    result = Lasso.lassoonetimeallestimation(i)[0]
-    err += Lasso.lassoonetimeallestimation(i)[1]
-    long = similar[np.argmax(result)]
-    short = similar[np.argmin(result)]
-    portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
-    PortRet.append(portreturn)
-    print(str(i)+"...finished")
-    print(err)
-PortRet = pd.DataFrame(PortRet)
-PortRet.index = index
-PortRet.columns = ['Ret-Lasso']
-PortRet.to_csv('Result-Lasso.csv')
+# # Lassocheck
+# PortRet = []
+# Lasso = Lassoestimation(df,similar,10)
+# err = 0
+# for i in range(po_start,po_end+1):
+#     tmpdf = df[i-11:i]
+#     result = Lasso.lassoonetimeallestimation(i)[0]
+#     err += Lasso.lassoonetimeallestimation(i)[1]
+#     long = similar[np.argmax(result)]
+#     short = similar[np.argmin(result)]
+#     portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
+#     PortRet.append(portreturn)
+#     print(str(i)+"...finished")
+#     print(err)
+# PortRet = pd.DataFrame(PortRet)
+# PortRet.index = index
+# PortRet.columns = ['Ret-Lasso']
+# PortRet.to_csv('Result-Lasso.csv')
 
