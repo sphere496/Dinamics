@@ -96,17 +96,11 @@ class GPRestimation:
         average = self.expectation(data_list,y)
         print(skew)
         if abs(skew) < 0.5:
-            print("0.5")
             return average
         else:
-            print("not 0.5")
             sortedlist = self.pointsort(data_list,average)[0:int(len(data_list)/2)]
-            # print('sortedlist', sortedlist)
             delta = [x-average for x in sortedlist]
-            # print('delta', delta)
             omega = [np.e**(-x/delta[0]) for x in delta]
-            # print('omega',omega)
-            # print(self.expectation(sortedlist,omega))
             return self.expectation(sortedlist,omega)
 
     def onetimeestimation(self,i,terget):
@@ -220,7 +214,7 @@ for i in range(po_start,po_end+1):
 PortRet = pd.DataFrame(PortRet)
 PortRet.index = index
 PortRet.columns = ['Ret-GPR']  
-PortRet.to_csv('Result.csv')
+PortRet.to_csv('Result-GPR.csv')
 GPRerr = err
 
  # linearcheck
