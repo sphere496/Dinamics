@@ -15,7 +15,7 @@ from sklearn import linear_model
 
 #予測期間
 start = 20180104
-end = 20181228
+end = 20180130
 
 similar = ['1801 JT Equity',
 '1802 JT Equity',
@@ -45,7 +45,6 @@ class GPRestimation:
         self.df = df
         self.similar = similar
         self.n = n
-        
         self.p = p
         self.q = q
 
@@ -90,11 +89,9 @@ class GPRestimation:
     # kernel density estimationをしたのち，期待値を算出する
     def kde_process(self,data_list):
         kde_model = gaussian_kde(data_list)
-        print(data_list)
         y = kde_model(data_list)
         skew = pd.Series(y).skew()
         average = self.expectation(data_list,y)
-        print(skew)
         if abs(skew) < 0.5:
             return average
         else:
@@ -171,7 +168,6 @@ class Lassoestimation:
         self.df = df
         self.similar = similar
         self.n = n        
-        
     def lassoregression(self,train_x,train_y,test_x):
         lasso = linear_model.Lasso(alpha=0.00001)
         lasso.fit(train_x,train_y)
@@ -193,7 +189,6 @@ class Lassoestimation:
         for terget in similar:
             result = np.append(result,self.lassoestimation(terget,self.n,i)[0])
             err += self.lassoestimation(terget,self.n,i)[1]
-        print(err)
         return result,err
 
 # GPRcheck
@@ -209,7 +204,7 @@ for i in range(po_start,po_end+1):
     short = similar[np.argmin(result)]
     portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
     PortRet.append(portreturn)
-    print(str(i)+"...finished")
+    print(date['Date'][i],"...finished")
     print(err)
 PortRet = pd.DataFrame(PortRet)
 PortRet.index = index
@@ -229,7 +224,7 @@ for i in range(po_start,po_end+1):
     short = similar[np.argmin(result)]
     portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
     PortRet.append(portreturn)
-    print(str(i)+"...finished")
+    print(date['Date'][i],"...finished")
     print(err)
 print(err)
 PortRet = pd.DataFrame(PortRet)
@@ -250,11 +245,11 @@ for i in range(po_start,po_end+1):
     short = similar[np.argmin(result)]
     portreturn = tmpdf[long].values[-1] - tmpdf[short].values[-1]
     PortRet.append(portreturn)
-    print(str(i)+"...finished")
+    print(date['Date'][i],"...finished")
     print(err)
 PortRet = pd.DataFrame(PortRet)
 PortRet.index = index
 PortRet.columns = ['Ret-Lasso'] 
 PortRet.to_csv('Result-Lasso.csv')
 Laserr = err
-print(Linerr,Laserr,GPRerr)
+print(Linerr,Laserr)
