@@ -15,18 +15,25 @@ from sklearn import linear_model
 
 #予測期間
 start = 20180104
-end = 20180130
+end = 20181210
 
-similar = ['1801 JT Equity',
-'1802 JT Equity',
-'1803 JT Equity',
-'1812 JT Equity',
-'1820 JT Equity',
-'1821 JT Equity',
-'1824 JT Equity',
-'1833 JT Equity',
-'1860 JT Equity',
-'1893 JT Equity']
+similar = ['1332 JT Equity',
+'2002 JT Equity',
+'2201 JT Equity',
+'2206 JT Equity',
+'2212 JT Equity',
+'2264 JT Equity',
+'2282 JT Equity',
+'2607 JT Equity',
+'2801 JT Equity',
+'2802 JT Equity',
+'2809 JT Equity',
+'2810 JT Equity',
+'2811 JT Equity',
+'2871 JT Equity',
+'2875 JT Equity',
+'2897 JT Equity']
+
 
 # 推定のために1日リターンに
 df_open = pd.read_csv('Open.csv',usecols =similar)
@@ -83,8 +90,8 @@ class GPRestimation:
     
     # 期待値を算出する関数
     def expectation(self,x,y):
-        y = y / sum(y)
-        return sum(x*y)
+        normal = [i / sum(y) for i in y]
+        return np.dot(np.array(x),np.array(y))
 
     # kernel density estimationをしたのち，期待値を算出する
     def kde_process(self,data_list):
@@ -193,7 +200,7 @@ class Lassoestimation:
 
 # GPRcheck
 PortRet = []
-GPR = GPRestimation(df,similar,10,3,16)
+GPR = GPRestimation(df,similar,10,3,50)
 err = 0
 for i in range(po_start,po_end+1):
     tmpdf = df[i:i+1]
