@@ -103,7 +103,7 @@ class GPRestimation:
             return average
         else:
             sortedlist = self.pointsort(data_list,average)[0:int(len(data_list)/2)]
-            delta = [x-average for x in sortedlist]
+            delta = [abs(x-average) for x in sortedlist]
             omega = [np.e**(-x/delta[0]) for x in delta]
             return self.expectation(sortedlist,omega)
 
