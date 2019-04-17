@@ -91,7 +91,7 @@ class GPRestimation:
     # 期待値を算出する関数
     def expectation(self,x,y):
         normal = [i / sum(y) for i in y]
-        return np.dot(np.array(x),np.array(y))
+        return np.dot(np.array(x),np.array(normal))
 
     # kernel density estimationをしたのち，期待値を算出する
     def kde_process(self,data_list):
